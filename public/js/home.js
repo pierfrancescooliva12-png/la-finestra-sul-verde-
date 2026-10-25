@@ -24,7 +24,7 @@
     update();
   }
 
-  const targets = document.querySelectorAll(".section__head, .intro__text, .card, .split > *, .faq__list, .panorama__quote, .amenities");
+  const targets = document.querySelectorAll(".section__head, .intro__text, .card, .review, .split > *, .faq__list, .panorama__quote, .amenities");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(entries => entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }

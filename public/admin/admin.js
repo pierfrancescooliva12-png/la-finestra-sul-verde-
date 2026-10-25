@@ -27,12 +27,12 @@
   async function api(path, { method = "GET", body } = {}) {
     const res = await fetch(path, {
       method,
-      headers: { Authorization: `Bearer ${state.pass}`, ...(body ? { "Content-Type": "application/json" } : {}) },
+      headers: { Authorization: `Bearer ${encodeURIComponent(state.pass)}`, ...(body ? { "Content-Type": "application/json" } : {}) },
       body: body ? JSON.stringify(body) : undefined
     });
-    if (res.status === 401) { logout(); throw new Error("Sessione scaduta"); }
     const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || "Errore");
+    if (res.status === 401 && !$("app").hidden) logout();
+    if (!res.ok) throw Object.assign(new Error(data.error || `Errore ${res.status}`), { status: res.status });
     return data;
   }
 
@@ -47,13 +47,15 @@
   // ---------- Accesso ----------
   $("login-form").addEventListener("submit", async e => {
     e.preventDefault();
-    state.pass = e.target.password.value;
+    state.pass = e.target.password.value.trim();
     try {
       await load();
       try { sessionStorage.setItem("admin-pass", state.pass); } catch {}
       showApp();
     } catch (err) {
-      $("login-msg").textContent = "Password non corretta";
+      $("login-msg").textContent = err.status === 401 ? "Password non corretta"
+        : err.status === 503 ? "La password admin non è ancora attiva: su Netlify controlla la variabile ADMIN_PASSWORD e rifai il deploy."
+        : `Accesso non riuscito: ${err.message}`;
     }
   });
 

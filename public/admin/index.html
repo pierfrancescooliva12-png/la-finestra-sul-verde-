@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · La Finestra sul Verde</title>
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Accesso -->
+  <section class="login" id="login">
+    <form class="login__card" id="login-form">
+      <img src="/assets/logo.svg" alt="" class="login__logo">
+      <h1>Area riservata</h1>
+      <input type="password" name="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="btn btn--block">Entra</button>
+      <p class="form-msg is-error" id="login-msg"></p>
+    </form>
+  </section>
+
+  <div class="app" id="app" hidden>
+    <header class="nav">
+      <a href="/" class="brand" target="_blank" rel="noopener">
+        <img class="brand__mark" src="/assets/logo.svg" alt="">
+        <span class="brand__name">La Finestra<br><em>sul Verde</em></span>
+      </a>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="calendar" aria-selected="true">Calendario e prezzi</button>
+        <button role="tab" data-tab="bookings">Prenotazioni</button>
+        <button role="tab" data-tab="settings">Impostazioni</button>
+      </nav>
+      <button class="link" id="logout">Esci</button>
+    </header>
+
+    <div class="status" id="status"></div>
+
+    <!-- CALENDARIO -->
+    <section class="panel" data-panel="calendar">
+      <div class="cal-layout">
+        <div>
+          <div class="cal-toolbar">
+            <button class="icon-btn" id="m-prev" aria-label="Mese precedente">‹</button>
+            <h2 id="m-title"></h2>
+            <button class="icon-btn" id="m-next" aria-label="Mese successivo">›</button>
+            <span class="spacer"></span>
+            <span class="kpi" id="kpi"></span>
+          </div>
+          <div class="acal" id="acal"></div>
+          <div class="legend">
+            <span><i class="tag tag--direct"></i>Sito</span>
+            <span><i class="tag tag--airbnb"></i>Airbnb</span>
+            <span><i class="tag tag--booking"></i>Booking</span>
+            <span><i class="tag tag--block"></i>Bloccato</span>
+            <span><i class="heat heat--lo"></i><i class="heat heat--mid"></i><i class="heat heat--hi"></i>Domanda stimata</span>
+            <span>✎ prezzo manuale</span>
+          </div>
+          <p class="muted small">Clic per selezionare un giorno, Maiusc+clic per selezionare un periodo.</p>
+        </div>
+
+        <aside class="side" id="side">
+          <p class="muted">Seleziona uno o più giorni per vedere il prezzo suggerito e modificarlo.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRENOTAZIONI -->
+    <section class="panel" data-panel="bookings" hidden>
+      <h2>Prenotazioni dirette</h2>
+      <div class="table-wrap"><table class="table" id="bookings"></table></div>
+      <p class="muted small">Le prenotazioni di Airbnb e Booking compaiono nel calendario, ma si gestiscono sui rispettivi portali.</p>
+    </section>
+
+    <!-- IMPOSTAZIONI -->
+    <section class="panel" data-panel="settings" hidden>
+      <form id="settings-form" class="settings">
+        <fieldset>
+          <legend>Prezzi</legend>
+          <label>Prezzo base a notte (€)<input type="number" name="basePrice" min="1" step="1"></label>
+          <label>Prezzo minimo (€)<input type="number" name="minPrice" min="1" step="1"></label>
+          <label>Prezzo massimo (€)<input type="number" name="maxPrice" min="1" step="1"></label>
+          <label>Aumento weekend (%)<input type="number" name="weekendUplift" min="0" step="1"></label>
+          <label class="check"><input type="checkbox" name="autoPricing"> Prezzi automatici: le notti senza prezzo manuale usano il prezzo suggerito</label>
+          <div class="season">
+            <p class="label">Stagionalità (1 = media, 1,2 = +20%)</p>
+            <div class="season__grid" id="season"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Regole e pagamenti</legend>
+          <label>Pulizia finale (€)<input type="number" name="cleaningFee" min="0" step="1"></label>
+          <label>Imposta di soggiorno (€ a persona a notte)<input type="number" name="touristTax" min="0" step="0.1"></label>
+          <label>Imposta: notti massime<input type="number" name="touristTaxMaxNights" min="0" step="1"></label>
+          <label>Soggiorno minimo (notti)<input type="number" name="minNights" min="1" step="1"></label>
+          <label>Ospiti massimi<input type="number" name="maxGuests" min="1" step="1"></label>
+          <label>Sconto pagamento online (%)<input type="number" name="onlineDiscount" min="0" step="1"></label>
+          <label>Acconto per chi paga all'arrivo (%)<input type="number" name="depositPercent" min="0" max="100" step="1"></label>
+          <label>Cancellazione gratuita (giorni prima)<input type="number" name="freeCancellationDays" min="0" step="1"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Calendari Airbnb e Booking</legend>
+          <label>Link iCal di Airbnb<input type="url" name="icalAirbnb" placeholder="https://www.airbnb.it/calendar/ical/…"></label>
+          <label>Link iCal di Booking<input type="url" name="icalBooking" placeholder="https://admin.booking.com/hotel/hoteladmin/ical.html?t=…"></label>
+          <div class="export">
+            <p class="label">Link da incollare su Airbnb e Booking (esporta le prenotazioni del sito)</p>
+            <code id="ics-url"></code>
+          </div>
+          <div class="sync"><button type="button" class="btn btn--small btn--ghost" id="sync">Sincronizza ora</button><span class="muted small" id="sync-status"></span></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Email e arrivo</legend>
+          <label>La tua email (ricevi le notifiche)<input type="email" name="ownerEmail"></label>
+          <div class="row3">
+            <label>Check-in dalle<input type="time" name="checkinFrom"></label>
+            <label>Check-in fino alle<input type="time" name="checkinTo"></label>
+            <label>Check-out entro<input type="time" name="checkoutBy"></label>
+          </div>
+          <label>Indirizzo (inviato solo agli ospiti confermati)<input type="text" name="address"></label>
+          <label>Istruzioni di arrivo<textarea name="checkinInstructions" rows="4"></textarea></label>
+        </fieldset>
+
+        <fieldset class="wide">
+          <legend>Eventi personalizzati</legend>
+          <p class="muted small">Palio, festività, Pasqua e L'Eroica sono già inclusi. Aggiungi qui altri eventi (concerti, congressi, lauree, fiere): l'aumento si applica al prezzo suggerito.</p>
+          <div id="events"></div>
+          <button type="button" class="btn btn--small btn--ghost" id="add-event">+ Aggiungi evento</button>
+        </fieldset>
+
+        <div class="settings__actions">
+          <button class="btn">Salva impostazioni</button>
+          <span class="form-msg" id="settings-msg"></span>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

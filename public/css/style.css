@@ -69,7 +69,7 @@ p { margin: 0 0 1em; }
 .nav__links { display: flex; align-items: center; gap: 2rem; font-size: .82rem; letter-spacing: .08em; }
 .nav__links a:not(.btn) { text-decoration: none; color: var(--ink-soft); }
 .nav__links a:not(.btn):hover { color: var(--ink); }
-@media (max-width: 760px) { .nav__links a:not(.btn) { display: none; } }
+@media (max-width: 760px) { .nav__links a:not(.btn):not(.nav__lang) { display: none; } .nav__links { gap: 1rem; } }
 
 /* Placeholder images — da sostituire con foto reali */
 .ph {
@@ -179,10 +179,10 @@ p { margin: 0 0 1em; }
 .icon-btn:hover:not(:disabled) { border-color: var(--green); }
 .icon-btn:disabled { opacity: .3; cursor: default; }
 
-.month { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; min-width: 0; }
 .month .dow { font-size: .68rem; text-align: center; color: var(--ink-soft); letter-spacing: .1em; padding-bottom: .5rem; }
 .day {
-  aspect-ratio: 1; border: 0; background: none; font: 400 .88rem var(--sans); color: var(--ink);
+  min-width: 0; height: 2.9rem; padding: 0; border: 0; background: none; font: 400 .88rem var(--sans); color: var(--ink);
   cursor: pointer; border-radius: var(--radius); position: relative;
 }
 .day:hover:not(:disabled) { outline: 1px solid var(--green); }
@@ -190,6 +190,9 @@ p { margin: 0 0 1em; }
 .day.is-busy { background: var(--busy); color: #a7a59e; text-decoration: line-through; }
 .day.is-range { background: var(--green-pale); }
 .day.is-start, .day.is-end { background: var(--green-deep); color: #fff; }
+.day span { display: block; line-height: 1.1; }
+.day small { display: block; font-size: .62rem; color: var(--ink-soft); line-height: 1.2; }
+.day.is-start small, .day.is-end small { color: #d6e0d0; }
 .day.is-checkout-only { background: linear-gradient(135deg, transparent 50%, var(--busy) 50%); }
 
 .calendar__legend { display: flex; gap: 1.5rem; margin-top: 1.5rem; font-size: .75rem; color: var(--ink-soft); }
@@ -221,6 +224,11 @@ p { margin: 0 0 1em; }
 .summary__total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding: 1rem 0; }
 .summary__total strong { font: 400 2rem var(--serif); color: var(--green-deep); }
 .guest { display: grid; gap: .5rem; margin-bottom: 1rem; }
+.summary__due .line { font-size: .92rem; }
+.summary__due { margin: -.4rem 0 1rem; }
+.booking__note { color: #8a6d2f; margin-top: .5rem; }
+.nav__lang { font-size: .75rem; letter-spacing: .15em; text-decoration: none; color: var(--ink-soft); border: 1px solid var(--line); padding: .35em .6em; border-radius: var(--radius); }
+.nav__lang:hover { color: var(--ink); border-color: var(--ink-soft); }
 .form-msg { font-size: .88rem; margin: .8rem 0 0; min-height: 1em; }
 .form-msg.is-error { color: #9a3b2e; }
 .form-msg.is-ok { color: var(--green-deep); }
@@ -235,3 +243,11 @@ p { margin: 0 0 1em; }
 .footer p { margin: 0 0 .3rem; }
 .footer__legal { grid-column: 1 / -1; color: #a9b8a3 !important; border-top: 1px solid rgba(255,255,255,.15); padding-top: 1.5rem; }
 @media (max-width: 680px) { .footer { grid-template-columns: 1fr; } }
+
+/* Conferma prenotazione */
+.confirm { min-height: 70vh; display: grid; place-items: center; }
+.confirm__card { max-width: 34rem; text-align: center; }
+.confirm__card h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.confirm__list { display: grid; grid-template-columns: auto auto; gap: .2rem 2rem; text-align: left; margin: 2rem auto; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: 24rem; font-size: .92rem; }
+.confirm__list dt { color: var(--ink-soft); }
+.confirm__list dd { margin: 0; text-align: right; }

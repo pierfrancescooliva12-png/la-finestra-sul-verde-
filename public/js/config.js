@@ -17,7 +17,7 @@ window.SITE_CONFIG = {
     { from: "2026-12-24", to: "2026-12-28", source: "booking" }
   ],
   contact: {
-    email: "info@lafinestrasulverde.it",
+    email: "oli.giuann@gmail.com",
     phone: "+39 000 000 0000",
     whatsapp: "390000000000"
   }

@@ -68,7 +68,7 @@ test("firma webhook Stripe", () => {
 
 test("prenotazione demo: conferma, date bloccate, doppia prenotazione rifiutata", async () => {
   const checkIn = addDays(today(), 40), checkOut = addDays(today(), 43);
-  const guest = { checkIn, checkOut, guests: 2, payMode: "deposit", name: "Anna Bianchi", email: "anna@example.com", lang: "it" };
+  const guest = { checkIn, checkOut, guests: 2, payMode: "deposit", name: "Anna Bianchi", email: "anna@example.com", lang: "it", acceptTerms: true };
   const res = await call("POST", "/api/checkout", guest);
   assert.equal(res.status, 200);
   const { url } = await res.json();
@@ -86,10 +86,11 @@ test("prenotazione demo: conferma, date bloccate, doppia prenotazione rifiutata"
 });
 
 test("validazioni del checkout", async () => {
-  const base = { checkIn: addDays(today(), 60), checkOut: addDays(today(), 61), guests: 2, payMode: "full", name: "X", email: "x@y.it" };
+  const base = { checkIn: addDays(today(), 60), checkOut: addDays(today(), 61), guests: 2, payMode: "full", name: "X", email: "x@y.it", acceptTerms: true };
   assert.equal((await call("POST", "/api/checkout", base)).status, 400); // sotto il minimo notti
   assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), guests: 9 })).status, 400);
   assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), email: "no" })).status, 400);
+  assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), acceptTerms: false })).status, 400);
 });
 
 test("admin: accesso protetto, prezzo manuale e blocco date", async () => {
@@ -122,7 +123,7 @@ test("flusso Stripe simulato: checkout, webhook firmato, addebito saldo", async 
   };
   try {
     const checkIn = addDays(today(), 90), checkOut = addDays(today(), 92);
-    const res = await call("POST", "/api/checkout", { checkIn, checkOut, guests: 2, payMode: "deposit", name: "Tom", email: "tom@example.com", lang: "en" });
+    const res = await call("POST", "/api/checkout", { checkIn, checkOut, guests: 2, payMode: "deposit", name: "Tom", email: "tom@example.com", lang: "en", acceptTerms: true });
     const out = await res.json();
     assert.equal(out.url, "https://checkout.stripe.com/c/cs_1");
     const sessionBody = decodeURIComponent(calls[0].body);

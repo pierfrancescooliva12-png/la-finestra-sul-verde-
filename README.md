@@ -64,5 +64,6 @@ Per dati di mercato esterni (prezzi dei concorrenti, occupazione della città) s
 - [ ] Prezzi definitivi (dalla pagina admin)
 - [ ] Imposta di soggiorno di Siena (importo e notti massime da verificare)
 - [ ] Voto medio e recensioni reali
-- [ ] Contatti, CIN/CIR, privacy policy, termini e condizioni di prenotazione
+- [ ] Completare i campi tra [ ] in `public/termini.html`, `public/privacy.html` e nelle versioni inglesi (gestore, CIN, telefono, penale per mancata presentazione, animali), poi farli verificare da un consulente
+- [ ] Contatti e CIN nel footer del sito
 - [ ] Dominio

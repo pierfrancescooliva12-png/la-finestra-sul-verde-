@@ -251,3 +251,15 @@ p { margin: 0 0 1em; }
 .confirm__list { display: grid; grid-template-columns: auto auto; gap: .2rem 2rem; text-align: left; margin: 2rem auto; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: 24rem; font-size: .92rem; }
 .confirm__list dt { color: var(--ink-soft); }
 .confirm__list dd { margin: 0; text-align: right; }
+
+/* Consenso termini */
+.consent { display: flex !important; gap: .6rem; align-items: flex-start; font-size: .8rem !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--ink-soft) !important; margin: .2rem 0 1rem !important; line-height: 1.5; }
+.consent input { margin-top: .2rem; accent-color: var(--green-deep); }
+
+/* Pagine legali */
+.legal { max-width: 46rem; margin: 0 auto; }
+.legal h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.legal h2 { font-size: 1.6rem; margin: 2.2rem 0 .6rem; }
+.legal ul { padding-left: 1.2rem; }
+.legal li { margin-bottom: .5rem; }
+.todo { background: #f3e7cf; color: #7a5a1c; padding: 0 .25em; border-radius: 2px; }

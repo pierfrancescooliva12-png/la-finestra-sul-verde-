@@ -8,9 +8,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="alternate" hreflang="it" href="/">
   <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -189,6 +187,7 @@
             <input type="tel" name="phone" placeholder="Telefono" autocomplete="tel">
           </div>
 
+          <label class="consent"><input type="checkbox" name="terms" required> <span>Ho letto e accetto i <a href="/termini.html" target="_blank">termini e condizioni</a>, compresa la politica di cancellazione, e l'<a href="/privacy.html" target="_blank">informativa privacy</a>.</span></label>
           <button type="submit" class="btn btn--block" id="submit" disabled>Prenota</button>
           <p class="form-msg" id="form-msg" role="status"></p>
           <p class="muted small" id="policy"></p>
@@ -211,7 +210,7 @@
       <p>Disponibile anche su</p>
       <p><a href="#">Booking.com</a> · <a href="#">Airbnb</a></p>
     </div>
-    <p class="footer__legal muted small">© 2026 La Finestra sul Verde · CIN/CIR: da inserire · <a href="#">Privacy</a> · <a href="#">Termini</a></p>
+    <p class="footer__legal muted small">© 2026 La Finestra sul Verde · CIN/CIR: da inserire · <a href="/privacy.html">Privacy</a> · <a href="/termini.html">Termini e condizioni</a></p>
   </footer>
 
   <!-- Logo come simbolo riutilizzabile -->

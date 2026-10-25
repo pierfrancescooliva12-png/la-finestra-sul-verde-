@@ -3,87 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>La Finestra sul Verde · Appartamento a Siena</title>
-  <meta name="description" content="Appartamento con terrazza e vista sulla città e sulle montagne, a 1,3 km da Piazza del Campo a Siena. Wi‑Fi gratuito, aria condizionata, noleggio bici. Prenota direttamente.">
+  <title>La Finestra sul Verde · Appartamento con terrazza a Siena</title>
+  <meta name="description" content="Appartamento con terrazza affacciato sul verde a Siena, a 1,3 km da Piazza del Campo. Fino a 4 ospiti, Wi‑Fi, aria condizionata. Prenota direttamente.">
+  <meta name="theme-color" content="#1d2721">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="alternate" hreflang="it" href="/">
   <link rel="alternate" hreflang="en" href="/en/">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home">
 
-  <header class="nav" id="top">
+  <header class="nav nav--overlay" id="top">
     <a href="#top" class="brand" aria-label="La Finestra sul Verde — home">
       <svg class="brand__mark" viewBox="0 0 64 80" aria-hidden="true"><use href="#logo"/></svg>
       <span class="brand__name">La Finestra<br><em>sul Verde</em></span>
     </a>
     <nav class="nav__links" aria-label="Sezioni">
       <a href="#casa">La casa</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#siena">Siena</a>
-      <a href="#recensioni">Ospiti</a>
+      <a href="#foto">Foto</a>
+      <a href="#siena">Dove siamo</a>
+      <a href="#faq">Domande</a>
       <a href="en/" class="nav__lang" hreflang="en" lang="en">EN</a>
       <a href="#prenota" class="btn btn--small">Prenota</a>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <button type="button" class="hero__media photo" data-photo="drone-torre-mangia">
-        <img src="photos/drone-torre-mangia-800.webp" srcset="photos/drone-torre-mangia-800.webp 800w, photos/drone-torre-mangia-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="800" height="600" alt="La casa immersa nel verde, con il viadotto e la Torre del Mangia sullo sfondo" fetchpriority="high" decoding="async">
-      </button>
-      <div class="hero__content">
-        <p class="eyebrow">Siena · Toscana</p>
-        <h1>Una finestra aperta su Siena</h1>
-        <p class="lead">Un appartamento con terrazza, affacciato su una valle di ulivi tra le mura di Siena e le colline fino al Monte Amiata, a 1,3 km da Piazza del Campo.</p>
-        <div class="hero__cta">
-          <a href="#prenota" class="btn">Verifica disponibilità</a>
-          <span class="hero__note">Prenotazione diretta · miglior prezzo garantito</span>
+    <!-- APERTURA -->
+    <section class="cover">
+      <img class="cover__img" src="photos/drone-torre-mangia-800.webp" srcset="photos/drone-torre-mangia-800.webp 800w, photos/drone-torre-mangia-1600.webp 1600w" sizes="100vw" width="800" height="600" alt="La casa immersa nel verde, con il viadotto e la Torre del Mangia sullo sfondo" fetchpriority="high" decoding="async">
+      <div class="cover__shade"></div>
+      <div class="cover__content">
+        <svg class="cover__mark" viewBox="0 0 64 80" aria-hidden="true"><use href="#logo"/></svg>
+        <p class="eyebrow eyebrow--light">Siena · Toscana</p>
+        <h1>La Finestra<br><em>sul Verde</em></h1>
+        <p class="cover__tag">Un appartamento con terrazza affacciato su una valle di ulivi, <br>a due passi dalle mura di Siena.</p>
+        <div class="cover__cta">
+          <a href="#prenota" class="btn btn--accent">Prenota il soggiorno</a>
+          <a href="#foto" class="btn btn--outline-light">Guarda le foto</a>
         </div>
       </div>
-    </section>
-
-    <!-- KEY FACTS -->
-    <section class="facts" aria-label="In breve">
-      <div><strong>4 ospiti</strong><span>camera + divano letto</span></div>
-      <div><strong>Terrazza</strong><span>vista città e montagne</span></div>
-      <div><strong>1,3 km</strong><span>da Piazza del Campo</span></div>
-      <div><strong>24/7</strong><span>assistenza agli ospiti</span></div>
+      <a href="#casa" class="cover__scroll">Scorri<span aria-hidden="true">↓</span></a>
     </section>
 
     <!-- LA CASA -->
-    <section class="section split" id="casa">
-      <div class="split__text">
+    <section class="section intro" id="casa">
+      <div class="intro__text">
         <p class="eyebrow">La casa</p>
-        <h2>Il verde della valle,<br>le mura di Siena a due passi</h2>
-        <p>La Finestra sul Verde è un appartamento accogliente e luminoso, pensato per vivere Siena con calma. Dalle finestre lo sguardo spazia su una valle di ulivi e orti, con il viadotto e le mura della città da un lato e le colline fino al Monte Amiata dall'altro. La terrazza con il pergolato è il posto ideale per la colazione al mattino e per un calice di vino al tramonto.</p>
-        <p>Gli ambienti sono semplici e curati. C'è una camera matrimoniale, un soggiorno con divano letto matrimoniale dove rilassarsi dopo una giornata in giro per contrade e musei, e una cucina dotata di tutto il necessario per sentirsi a casa. L'aria condizionata garantisce il comfort anche nelle giornate estive più calde.</p>
-        <ul class="rooms">
-          <li><span>Camera</span>letto matrimoniale, armadio, biancheria fornita</li>
-          <li><span>Soggiorno</span>divano letto matrimoniale</li>
-          <li><span>Cucina</span>utensili, frigorifero, macchina da caffè</li>
-          <li><span>Bagno</span>doccia, bidet, asciugamani</li>
-          <li><span>Terrazza</span>pergolato, divanetti, fioriere</li>
-        </ul>
-      </div>
-      <div class="gallery">
-        <button type="button" class="photo gallery__item" data-photo="terrazza"><img src="photos/terrazza-800.webp" srcset="photos/terrazza-800.webp 800w, photos/terrazza-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La terrazza con il pergolato" loading="lazy" decoding="async"></button>
-        <button type="button" class="photo gallery__item" data-photo="soggiorno"><img src="photos/soggiorno-800.webp" srcset="photos/soggiorno-800.webp 800w, photos/soggiorno-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="Il soggiorno" loading="lazy" decoding="async"></button>
-        <button type="button" class="photo gallery__item" data-photo="camera-frontale"><img src="photos/camera-frontale-800.webp" srcset="photos/camera-frontale-800.webp 800w, photos/camera-frontale-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La camera matrimoniale" loading="lazy" decoding="async"></button>
-        <button type="button" class="photo gallery__item" data-photo="cucina"><img src="photos/cucina-800.webp" srcset="photos/cucina-800.webp 800w, photos/cucina-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La cucina" loading="lazy" decoding="async"></button>
-        <button type="button" class="photo gallery__item" data-photo="bagno-doccia"><img src="photos/bagno-doccia-800.webp" srcset="photos/bagno-doccia-800.webp 800w, photos/bagno-doccia-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="Il bagno" loading="lazy" decoding="async"></button>
-        <button type="button" class="gallery__all" data-photo="terrazza">Tutte le foto (<span data-photo-count>35</span>)</button>
+        <h2>Il verde della valle,<br><em>Siena a due passi</em></h2>
+        <p>La Finestra sul Verde è un appartamento accogliente, arredato con cura e pieno di dettagli, pensato per vivere Siena con calma.</p><p>Dalle finestre lo sguardo spazia su una valle di ulivi e orti, con il viadotto e le mura della città da un lato e le colline fino al Monte Amiata dall'altro. La terrazza con il pergolato è il posto ideale per la colazione al mattino e per un calice di vino al tramonto.</p><p>Il centro storico, con i palazzi medievali, le contrade e Piazza del Campo, si raggiunge a piedi.</p>
       </div>
     </section>
 
-    <!-- SERVIZI -->
-    <section class="section section--tint" id="servizi">
-      <div class="section__head">
-        <p class="eyebrow">Servizi</p>
-        <h2>Tutto il necessario, niente di superfluo</h2>
+    <!-- FOTO -->
+    <section class="strip" id="foto" aria-label="Guarda le foto">
+      <ul class="strip__track">
+        <li><button type="button" class="photo" data-photo="terrazza"><img src="photos/terrazza-800.webp" srcset="photos/terrazza-800.webp 800w, photos/terrazza-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="La terrazza con il pergolato" loading="lazy" decoding="async"></button><span>La terrazza con il pergolato</span></li>
+        <li><button type="button" class="photo" data-photo="finestre-vista"><img src="photos/finestre-vista-800.webp" srcset="photos/finestre-vista-800.webp 800w, photos/finestre-vista-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="Le finestre sul verde" loading="lazy" decoding="async"></button><span>Le finestre sul verde</span></li>
+        <li><button type="button" class="photo" data-photo="camera-frontale"><img src="photos/camera-frontale-800.webp" srcset="photos/camera-frontale-800.webp 800w, photos/camera-frontale-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="La camera matrimoniale" loading="lazy" decoding="async"></button><span>La camera matrimoniale</span></li>
+        <li><button type="button" class="photo" data-photo="pranzo-soggiorno"><img src="photos/pranzo-soggiorno-800.webp" srcset="photos/pranzo-soggiorno-800.webp 800w, photos/pranzo-soggiorno-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="Zona pranzo e soggiorno" loading="lazy" decoding="async"></button><span>Zona pranzo e soggiorno</span></li>
+        <li><button type="button" class="photo" data-photo="cucina"><img src="photos/cucina-800.webp" srcset="photos/cucina-800.webp 800w, photos/cucina-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="La cucina" loading="lazy" decoding="async"></button><span>La cucina</span></li>
+        <li><button type="button" class="photo" data-photo="panorama-colline"><img src="photos/panorama-colline-800.webp" srcset="photos/panorama-colline-800.webp 800w, photos/panorama-colline-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="Le colline fino al Monte Amiata" loading="lazy" decoding="async"></button><span>Le colline fino al Monte Amiata</span></li>
+        <li><button type="button" class="photo" data-photo="bagno-doccia"><img src="photos/bagno-doccia-800.webp" srcset="photos/bagno-doccia-800.webp 800w, photos/bagno-doccia-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="Il bagno" loading="lazy" decoding="async"></button><span>Il bagno</span></li>
+        <li><button type="button" class="photo" data-photo="esterno-viadotto"><img src="photos/esterno-viadotto-800.webp" srcset="photos/esterno-viadotto-800.webp 800w, photos/esterno-viadotto-1600.webp 1600w" sizes="(max-width: 640px) 80vw, 420px" width="800" height="533" alt="La casa e il viadotto" loading="lazy" decoding="async"></button><span>La casa e il viadotto</span></li>
+      </ul>
+      <div class="strip__bar">
+        <div class="strip__dots" aria-hidden="true"></div>
+        <button type="button" class="btn btn--small btn--ghost" data-photo="terrazza">Tutte le foto (<span data-photo-count>35</span>)</button>
       </div>
+    </section>
+
+    <!-- IN BREVE -->
+    <section class="section section--dark" id="info">
+      <div class="section__head">
+        <p class="eyebrow eyebrow--light">In breve</p>
+        <h2>Tutto quello che serve sapere</h2>
+      </div>
+      <div class="cards">
+        <div class="card"><p class="card__label">Ospiti</p><p class="card__value">Fino a 4</p><p class="card__note">Camera matrimoniale e divano letto matrimoniale</p></div>
+        <div class="card"><p class="card__label">Check‑in</p><p class="card__value">16:00 – 22:00</p><p class="card__note">Arrivi fuori orario da concordare</p></div>
+        <div class="card"><p class="card__label">Check‑out</p><p class="card__value">Entro le 10:00</p><p class="card__note">Con calma, dopo l'ultima colazione in terrazza</p></div>
+        <div class="card"><p class="card__label">Centro</p><p class="card__value">1,3 km</p><p class="card__note">da Piazza del Campo, a piedi</p></div>
+      </div>
+    </section>
+
+    <!-- SPAZI E SERVIZI -->
+    <section class="section spaces" id="servizi">
+      <div class="split">
+        <div class="split__text">
+          <p class="eyebrow">Gli spazi</p>
+          <h2>Semplice, curata, <em>accogliente</em></h2>
+          <ul class="rooms">
+          <li><span>Camera</span>letto matrimoniale, armadio, libreria</li>
+          <li><span>Soggiorno</span>divano letto matrimoniale</li>
+          <li><span>Cucina</span>piano cottura, frigorifero, fornetto, macchina da caffè, bollitore</li>
+          <li><span>Bagno</span>doccia, bidet, asciugamani</li>
+          <li><span>Terrazza</span>pergolato, divanetti, fioriere</li>
+          </ul>
+        </div>
+        <button type="button" class="photo spaces__photo" data-photo="camera-scala"><img src="photos/camera-scala-800.webp" srcset="photos/camera-scala-800.webp 800w, photos/camera-scala-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="800" height="533" alt="La camera matrimoniale" loading="lazy" decoding="async"></button>
+      </div>
+      <p class="eyebrow spaces__amen">Servizi</p>
       <ul class="amenities">
         <li><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/></svg>Wi‑Fi gratuito</li>
         <li><svg viewBox="0 0 24 24"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/></svg>Aria condizionata</li>
@@ -96,43 +117,56 @@
       </ul>
     </section>
 
-    <!-- SIENA -->
-    <section class="section split split--reverse" id="siena">
-      <div class="split__text">
-        <p class="eyebrow">Dove siamo</p>
-        <h2>Siena, a passo lento</h2>
-        <p>Dall'appartamento si raggiunge a piedi il centro storico, tra i palazzi medievali, le contrade e le botteghe. È anche una base comoda per scoprire in auto o in bicicletta le colline del Chianti.</p>
-        <ul class="distances">
-          <li><span>Piazza del Campo</span><span>1,3 km</span></li>
-          <li><span>Piazza Salimbeni · Chiesa di San Cristoforo · Palazzo Chigi‑Saracini</span><span>nei dintorni</span></li>
-          <li><span>Piazza Matteotti · Greve in Chianti</span><span>42 km</span></li>
-          <li><span>Aeroporto di Firenze Peretola</span><span>76 km</span></li>
-        </ul>
-        <p class="muted small">Biciclette a noleggio disponibili in struttura. L'indirizzo esatto e le istruzioni di arrivo vengono inviati con la conferma della prenotazione.</p>
-      </div>
-      <figure class="map">
-        <button type="button" class="photo" data-photo="panorama-viadotto"><img src="photos/panorama-viadotto-800.webp" srcset="photos/panorama-viadotto-800.webp 800w, photos/panorama-viadotto-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="800" height="533" alt="Vista dalle finestre sul viadotto e sulle mura di Siena" loading="lazy" decoding="async"></button>
-        <figcaption><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Girolamo+Gigli+Siena" target="_blank" rel="noopener">Apri la zona su Google Maps ↗</a></figcaption>
-      </figure>
+    <!-- PANORAMA -->
+    <section class="panorama">
+      <img class="panorama__img" src="photos/panorama-amiata-800.webp" srcset="photos/panorama-amiata-800.webp 800w, photos/panorama-amiata-1600.webp 1600w" sizes="100vw" width="800" height="533" alt="Vista dalle finestre sulle colline senesi e sul Monte Amiata" loading="lazy" decoding="async">
+      <div class="panorama__shade"></div>
+      <p class="panorama__quote">«Dalle finestre, le colline fino al Monte Amiata.»</p>
     </section>
 
     <!-- RECENSIONI -->
-    <section class="section section--tint" id="recensioni">
+    <section class="section reviews-sec" id="recensioni">
       <div class="section__head">
-        <p class="eyebrow">Ospiti</p>
-        <h2>Cosa dicono di noi</h2>
-        <p class="score"><span>9,2</span> valutazione media su Booking e Airbnb</p>
+        <p class="eyebrow">Dicono di noi</p>
+        <h2>Le parole dei <em>nostri ospiti</em></h2>
       </div>
-      <div class="reviews">
-        <blockquote><p>“Pulitissimo e accogliente, con un host disponibile per qualsiasi cosa.”</p><cite>Ospite · Booking.com</cite></blockquote>
-        <blockquote><p>“Posizione comodissima per il centro di Siena. La vista dalla terrazza è stupenda.”</p><cite>Ospite · Airbnb</cite></blockquote>
-        <blockquote><p>“Cucina attrezzata di tutto, ci siamo sentiti a casa.”</p><cite>Ospite · Booking.com</cite></blockquote>
+      <div class="reviews-grid">
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Splendida casa a 200 m dal centro storico</p><p>Ottima posizione a 200 m da porta Pispini. Nelle vie adiacenti abbiamo trovato comodamente parcheggio gratuito. La casa è molto accogliente, arredata con gusto e pulitissima. Ottimi i materassi e i cuscini. Splendida veduta nella valle… proprio una finestra sul verde.</p></blockquote>
+          <figcaption>Ospite · marzo 2025</figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Beautiful, stylish, home-like accommodation</p><p>The one you don't want to leave from. Phantastic view and location. Perfect communication and entry instructions. Free parking close to the apartment, 15 mins walking to city centre. Very clean. Thank you for wonderful stay!!!</p></blockquote>
+          <figcaption>Ospite · luglio 2026</figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Il posto migliore dove soggiornare a Siena!</p><p>Appartamento fantastico vicino al centro storico e con una vista INCREDIBILE! Letto comodissimo! Faceva molto caldo, ma l'aria condizionata è stata una vera manna. I proprietari sono stati gentilissimi con noi!</p></blockquote>
+          <figcaption>Veronica · Argentina · luglio 2025</figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Un gioiello fuori le mura</p><p>Comoda e spaziosa sistemazione per una famiglia di 4 persone. Tutti gli utensili disponibili e proprietari pronti a rispondere a chiarimenti ed esigenze. Pulitissima.</p></blockquote>
+          <figcaption>Stefano · Italia · marzo 2025</figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Cute property with lovely view and very helpful host</p><p>Lovely property, most friendly hostess, love the location, air condition to work just fine in a heat wave. Would love to return. Very accommodating with check in out times.</p></blockquote>
+          <figcaption>Rich · Stati Uniti · luglio 2026</figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__score">10<span>/10</span></p>
+          <blockquote><p class="review__title">Posizione ottima, pulizia, parcheggi bianchi</p><p>Ottima posizione appena fuori dalla porta che accede al centro, zona di parcheggi bianchi non a pagamento (da non sottovalutare a Siena), casa pulita e funzionale con bella vista su paesaggio senese.</p></blockquote>
+          <figcaption>Lia · Italia · giugno 2025</figcaption>
+        </figure>
       </div>
-      <p class="muted small center">Voto e recensioni di esempio: da sostituire con il punteggio e le citazioni reali dei tuoi ospiti.</p>
+      <p class="reviews-src">Estratti di recensioni reali degli ospiti su Booking.com, tutte con voto 10/10.</p>
     </section>
 
     <!-- PRENOTA -->
-    <section class="section booking" id="prenota">
+    <section class="section booking section--sand" id="prenota">
       <div class="section__head">
         <p class="eyebrow">Prenota direttamente</p>
         <h2>Scegli le date del tuo soggiorno</h2>
@@ -198,6 +232,78 @@
         </aside>
       </form>
     </section>
+
+    <!-- DOVE SIAMO -->
+    <section class="section section--dark where" id="siena">
+      <div class="split">
+        <div class="split__text">
+          <p class="eyebrow eyebrow--light">Dove siamo</p>
+          <h2>Siena, <em>a passo lento</em></h2>
+          <p>La casa si trova appena fuori dalle mura, in una zona tranquilla affacciata sul verde: il centro storico si raggiunge a piedi, il Chianti in pochi minuti d'auto.</p>
+          <ul class="distances">
+            <li><span>Porta Pispini, ingresso al centro</span><span>200 m</span></li>
+            <li><span>Piazza del Campo</span><span>1,3 km · 15 min a piedi</span></li>
+            <li><span>Piazza Salimbeni · Palazzo Chigi‑Saracini</span><span>nei dintorni</span></li>
+            <li><span>Greve in Chianti</span><span>42 km</span></li>
+            <li><span>Aeroporto di Firenze</span><span>76 km</span></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h3>La Finestra sul Verde</h3>
+          <p class="contact__place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Via Girolamo Gigli, Siena</p>
+          <ul>
+            <li><a href="tel:+393914597040"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>+39 391 459 7040</a></li>
+            <li><a href="https://wa.me/393914597040" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>Scrivici su WhatsApp</a></li>
+            <li><a href="mailto:oli.giuann@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>oli.giuann@gmail.com</a></li>
+          </ul>
+          <p class="contact__note">Le istruzioni di arrivo vengono inviate con la conferma della prenotazione.</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Girolamo+Gigli+17+Siena" class="btn btn--accent" target="_blank" rel="noopener">Apri in Google Maps</a>
+        </div>
+      </div>
+      <button type="button" class="photo where__photo" data-photo="panorama-viadotto"><img src="photos/panorama-viadotto-800.webp" srcset="photos/panorama-viadotto-800.webp 800w, photos/panorama-viadotto-1600.webp 1600w" sizes="100vw" width="800" height="533" alt="Vista dalle finestre sulle colline senesi e sul Monte Amiata" loading="lazy" decoding="async"></button>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--sand faq" id="faq">
+      <div class="section__head">
+        <p class="eyebrow">Domande frequenti</p>
+        <h2>Le vostre domande,<br><em>le nostre risposte</em></h2>
+      </div>
+      <div class="faq__list">
+        <details>
+          <summary>Quante persone può ospitare l'appartamento?</summary>
+          <p>Fino a 4: due nella camera matrimoniale e due sul divano letto matrimoniale del soggiorno. Il prezzo è per 2 ospiti; dal terzo ospite si aggiunge un piccolo supplemento a notte, indicato nel preventivo.</p>
+        </details>
+        <details>
+          <summary>Come funziona il pagamento?</summary>
+          <p>Puoi pagare subito online l'intero soggiorno, oppure versare un acconto e saldare all'arrivo, in contanti o con carta. I pagamenti sono gestiti in sicurezza da Stripe.</p>
+        </details>
+        <details>
+          <summary>Posso cancellare la prenotazione?</summary>
+          <p>Sì, gratuitamente fino a 7 giorni prima dell'arrivo, con rimborso completo. Tutti i dettagli sono nei <a href="termini.html">termini e condizioni</a>.</p>
+        </details>
+        <details>
+          <summary>A che ora sono check‑in e check‑out?</summary>
+          <p>Il check‑in è dalle 16:00 alle 22:00, il check‑out entro le 10:00. Se arrivi più tardi scrivici: troviamo una soluzione.</p>
+        </details>
+        <details>
+          <summary>L'imposta di soggiorno è inclusa?</summary>
+          <p>Sì, il totale che vedi prima di pagare comprende già l'imposta di soggiorno del Comune di Siena.</p>
+        </details>
+        <details>
+          <summary>C'è parcheggio?</summary>
+          <p>Nelle vie vicine ci sono parcheggi gratuiti a strisce bianche, come raccontano molti nostri ospiti: a Siena non è scontato.</p>
+        </details>
+        <details>
+          <summary>Sono ammessi animali?</summary>
+          <p>Ci dispiace, gli animali non sono ammessi.</p>
+        </details>
+        <details>
+          <summary>Come si raggiunge il centro?</summary>
+          <p>A piedi: Piazza del Campo è a circa 1,3 km. Le indicazioni dettagliate arrivano con la conferma della prenotazione.</p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -206,15 +312,17 @@
       <span class="brand__name">La Finestra<br><em>sul Verde</em></span>
     </div>
     <div>
-      <p>Siena, Toscana</p>
-      <p><a href="mailto:oli.giuann@gmail.com">oli.giuann@gmail.com</a></p>
+      <p>Appartamento con terrazza a Siena</p>
+      <p><a href="tel:+393914597040">+39 391 459 7040</a> · <a href="mailto:oli.giuann@gmail.com">oli.giuann@gmail.com</a></p>
     </div>
     <div>
       <p>Disponibile anche su</p>
       <p><a href="#">Booking.com</a> · <a href="#">Airbnb</a></p>
     </div>
-    <p class="footer__legal muted small">© 2026 La Finestra sul Verde · CIN: IT052032C2FJMF5O4V · <a href="tel:+393914597040">+39 391 459 7040</a> · <a href="/privacy.html">Privacy</a> · <a href="/termini.html">Termini e condizioni</a></p>
+    <p class="footer__legal">© 2026 La Finestra sul Verde · CIN: IT052032C2FJMF5O4V · <a href="termini.html">Termini e condizioni</a> · <a href="privacy.html">Privacy</a></p>
   </footer>
+
+  <a class="wa-float" href="https://wa.me/393914597040" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg></a>
 
   <!-- Logo come simbolo riutilizzabile -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -233,5 +341,6 @@
   <script src="js/config.js"></script>
   <script src="js/booking.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

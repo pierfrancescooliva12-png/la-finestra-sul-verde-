@@ -80,7 +80,7 @@
       <form id="settings-form" class="settings">
         <fieldset>
           <legend>Prezzi</legend>
-          <label>Prezzo base a notte (€)<input type="number" name="basePrice" min="1" step="1"></label>
+          <label>Prezzo base a notte, 2 ospiti (€)<input type="number" name="basePrice" min="1" step="1"></label>
           <label>Prezzo minimo (€)<input type="number" name="minPrice" min="1" step="1"></label>
           <label>Prezzo massimo (€)<input type="number" name="maxPrice" min="1" step="1"></label>
           <label>Aumento weekend (%)<input type="number" name="weekendUplift" min="0" step="1"></label>
@@ -94,6 +94,7 @@
         <fieldset>
           <legend>Regole e pagamenti</legend>
           <label>Pulizia finale (€)<input type="number" name="cleaningFee" min="0" step="1"></label>
+          <label>Supplemento per ospite oltre il 2° (€ a notte)<input type="number" name="extraGuestFee" min="0" step="1"></label>
           <label>Imposta di soggiorno (€ a persona a notte)<input type="number" name="touristTax" min="0" step="0.1"></label>
           <label>Imposta: notti massime<input type="number" name="touristTaxMaxNights" min="0" step="1"></label>
           <label>Soggiorno minimo (notti)<input type="number" name="minNights" min="1" step="1"></label>
@@ -128,7 +129,7 @@
 
         <fieldset class="wide">
           <legend>Eventi personalizzati</legend>
-          <p class="muted small">Palio, festività, Pasqua e L'Eroica sono già inclusi. Aggiungi qui altri eventi (concerti, congressi, lauree, fiere): l'aumento si applica al prezzo suggerito.</p>
+          <p class="muted small">Palio, Strade Bianche, festività, Pasqua e L'Eroica sono già inclusi. Aggiungi qui altri eventi (concerti, congressi, lauree, fiere): l'aumento si applica al prezzo suggerito.</p>
           <div id="events"></div>
           <button type="button" class="btn btn--small btn--ghost" id="add-event">+ Aggiungi evento</button>
         </fieldset>

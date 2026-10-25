@@ -58,6 +58,20 @@ Per dati di mercato esterni (prezzi dei concorrenti, occupazione della città) s
 5. **Calendari**: nella pagina admin → Impostazioni incolla i link iCal di Airbnb e Booking. Copia poi il link `…/api/calendar.ics` mostrato lì e importalo su Airbnb e su Booking.
 6. Nella pagina admin imposta prezzi, acconto, regole, email per le notifiche, indirizzo e istruzioni di arrivo.
 
+## Visibilità su Google (SEO)
+
+Già fatto nel sito:
+- titoli e descrizioni con le parole chiave (Siena, terrazza, vista, Porta Pispini, parcheggio)
+- dati strutturati `LodgingBusiness` nella home e `Article` nelle guide
+- anteprime per social e WhatsApp (`photos/og-cover.jpg`), canonical e hreflang IT/EN
+- `sitemap.xml` e `robots.txt` (admin, API e pagine di conferma escluse)
+- guide `palio.html` e `strade-bianche.html` (IT/EN)
+
+Quando c'è il dominio:
+1. `node scripts/set-domain.mjs https://www.tuodominio.it` per aggiornare tutti gli indirizzi assoluti
+2. Google Search Console: verificare il dominio e inviare `https://www.tuodominio.it/sitemap.xml`
+3. Google Business Profile con il link al sito
+
 ## Da completare
 
 - [ ] Prezzi definitivi (dalla pagina admin)

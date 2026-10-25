@@ -154,3 +154,13 @@ test("flusso Stripe simulato: checkout, webhook firmato, addebito saldo", async 
     delete process.env.STRIPE_SECRET_KEY;
   }
 });
+
+test("admin: password con accenti e spazi, variabile mancante", async () => {
+  process.env.ADMIN_PASSWORD = " Città€2026 ";
+  const enc = { Authorization: `Bearer ${encodeURIComponent("Città€2026")}` };
+  assert.equal((await call("GET", "/api/admin/overview?months=1", null, enc)).status, 200);
+  assert.equal((await call("GET", "/api/admin/overview?months=1", null, { Authorization: `Bearer ${encodeURIComponent("città€2026")}` })).status, 401);
+  delete process.env.ADMIN_PASSWORD;
+  assert.equal((await call("GET", "/api/admin/overview?months=1", null, enc)).status, 503);
+  process.env.ADMIN_PASSWORD = "segreta";
+});

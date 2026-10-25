@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /conferma.html
+Disallow: /en/booking.html
+
+Sitemap: https://iridescent-cassata-cd1a68.netlify.app/sitemap.xml

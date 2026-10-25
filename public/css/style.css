@@ -448,3 +448,20 @@ h2 em, h1 em { font-style: italic; }
 .reviews-src { text-align: center; font-size: .8rem; color: var(--ink-soft); margin-top: 2rem; }
 @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* Pagine guida */
+.guide { max-width: 900px; margin: 0 auto; padding: clamp(3rem, 7vw, 5rem) clamp(1rem, 4vw, 2rem) 4rem; }
+.guide__head { text-align: center; max-width: 42rem; margin: 0 auto 2.5rem; }
+.guide__head h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.guide__photo { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 3rem; }
+.guide__body { max-width: 42rem; margin: 0 auto; font-size: 1.05rem; }
+.guide__body > p:first-child { font: italic 400 1.4rem/1.55 var(--serif); }
+.guide__body h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); margin: 2.4rem 0 .8rem; }
+.guide__body ul { padding-left: 1.2rem; }
+.guide__body li { margin-bottom: .7rem; }
+.guide__body li::marker { color: var(--accent); }
+.guide__cta { max-width: 42rem; margin: 3.5rem auto 0; padding: 2.4rem 2rem; text-align: center; background: var(--dark); color: var(--on-dark); }
+.guide__cta h2 { color: #fff; font-size: clamp(1.6rem, 3.5vw, 2.1rem); }
+.guide__cta p { color: var(--on-dark-soft); }
+.guide__more { margin: 1.4rem 0 0; font-size: .9rem; }
+.guide__more a { color: #d9b48f; }

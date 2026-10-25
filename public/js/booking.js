@@ -15,6 +15,7 @@
       dueNow: "Da pagare ora", balance: "Saldo all'arrivo",
       btnFull: "Prenota e paga ora", btnDeposit: "Prenota e versa l'acconto",
       missing: "Inserisci nome ed email per completare la prenotazione.",
+      terms: "Per prenotare devi accettare i termini e condizioni.",
       unavailable: "Ci dispiace, queste date sono appena state prenotate. Scegline altre.",
       sending: "Un attimo…", error: "Qualcosa non ha funzionato. Riprova o scrivici.",
       demo: "Modalità dimostrativa: i pagamenti non sono ancora attivi.",
@@ -36,6 +37,7 @@
       dueNow: "Due now", balance: "Balance on arrival",
       btnFull: "Book and pay now", btnDeposit: "Book and pay deposit",
       missing: "Please enter your name and email to complete the booking.",
+      terms: "Please accept the terms and conditions to book.",
       unavailable: "Sorry, these dates have just been booked. Please choose others.",
       sending: "One moment…", error: "Something went wrong. Please try again or contact us.",
       demo: "Demo mode: payments are not active yet.",
@@ -219,6 +221,11 @@
       msg.classList.add("is-error");
       return;
     }
+    if (!form.terms.checked) {
+      msg.textContent = T.terms;
+      msg.classList.add("is-error");
+      return;
+    }
     if (!state.live) { msg.textContent = T.offline; msg.classList.add("is-error"); return; }
     $("submit").disabled = true;
     msg.textContent = T.sending;
@@ -228,7 +235,8 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           checkIn: state.start, checkOut: state.end, guests: q.guests, payMode: q.payMode, lang,
-          name: form.name.value.trim(), email: form.email.value.trim(), phone: form.phone.value.trim()
+          name: form.name.value.trim(), email: form.email.value.trim(), phone: form.phone.value.trim(),
+          acceptTerms: form.terms.checked
         })
       });
       const data = await res.json();

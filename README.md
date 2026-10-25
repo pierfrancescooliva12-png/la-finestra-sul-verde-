@@ -60,9 +60,9 @@ Per dati di mercato esterni (prezzi dei concorrenti, occupazione della città) s
 
 ## Da completare
 
-- [ ] Foto reali (al posto dei riquadri verdi segnaposto)
 - [ ] Prezzi definitivi (dalla pagina admin)
 - [ ] Imposta di soggiorno di Siena (importo e notti massime da verificare)
 - [ ] Voto medio e recensioni reali
-- [ ] Contatti, CIN/CIR, privacy policy, termini e condizioni di prenotazione
+- [ ] Far verificare termini e privacy da un consulente
+- [ ] Quando ci sarà il dominio, sostituire l'email di contatto con un indirizzo sul dominio
 - [ ] Dominio

@@ -8,9 +8,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="alternate" hreflang="it" href="/">
   <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -33,13 +31,13 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__media ph ph--hero" role="img" aria-label="Foto della terrazza con vista su Siena">
-        <span class="ph__label">Foto terrazza / vista</span>
-      </div>
+      <button type="button" class="hero__media photo" data-photo="drone-torre-mangia">
+        <img src="photos/drone-torre-mangia-800.webp" srcset="photos/drone-torre-mangia-800.webp 800w, photos/drone-torre-mangia-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="800" height="600" alt="La casa immersa nel verde, con il viadotto e la Torre del Mangia sullo sfondo" fetchpriority="high" decoding="async">
+      </button>
       <div class="hero__content">
         <p class="eyebrow">Siena · Toscana</p>
         <h1>Una finestra aperta su Siena</h1>
-        <p class="lead">Un appartamento con terrazza affacciata sui tetti della città e sulle montagne all'orizzonte, a 1,3 km da Piazza del Campo.</p>
+        <p class="lead">Un appartamento con terrazza, affacciato su una valle di ulivi tra le mura di Siena e le colline fino al Monte Amiata, a 1,3 km da Piazza del Campo.</p>
         <div class="hero__cta">
           <a href="#prenota" class="btn">Verifica disponibilità</a>
           <span class="hero__note">Prenotazione diretta · miglior prezzo garantito</span>
@@ -49,7 +47,7 @@
 
     <!-- KEY FACTS -->
     <section class="facts" aria-label="In breve">
-      <div><strong>Wi‑Fi</strong><span>gratuito</span></div>
+      <div><strong>4 ospiti</strong><span>camera + divano letto</span></div>
       <div><strong>Terrazza</strong><span>vista città e montagne</span></div>
       <div><strong>1,3 km</strong><span>da Piazza del Campo</span></div>
       <div><strong>24/7</strong><span>assistenza agli ospiti</span></div>
@@ -59,22 +57,24 @@
     <section class="section split" id="casa">
       <div class="split__text">
         <p class="eyebrow">La casa</p>
-        <h2>Lo sguardo sui tetti di Siena,<br>il verde all'orizzonte</h2>
-        <p>La Finestra sul Verde è un appartamento accogliente e luminoso, pensato per vivere Siena con calma. La terrazza è il cuore della casa: da qui lo sguardo spazia sui tetti della città fino alle montagne. È il posto ideale per la colazione al mattino e per un calice di vino al tramonto.</p>
-        <p>Gli ambienti sono semplici e curati. C'è una camera da letto, un soggiorno dove rilassarsi dopo una giornata in giro per contrade e musei, e una cucina dotata di tutto il necessario per sentirsi a casa. L'aria condizionata garantisce il comfort anche nelle giornate estive più calde.</p>
+        <h2>Il verde della valle,<br>le mura di Siena a due passi</h2>
+        <p>La Finestra sul Verde è un appartamento accogliente e luminoso, pensato per vivere Siena con calma. Dalle finestre lo sguardo spazia su una valle di ulivi e orti, con il viadotto e le mura della città da un lato e le colline fino al Monte Amiata dall'altro. La terrazza con il pergolato è il posto ideale per la colazione al mattino e per un calice di vino al tramonto.</p>
+        <p>Gli ambienti sono semplici e curati. C'è una camera matrimoniale, un soggiorno con divano letto matrimoniale dove rilassarsi dopo una giornata in giro per contrade e musei, e una cucina dotata di tutto il necessario per sentirsi a casa. L'aria condizionata garantisce il comfort anche nelle giornate estive più calde.</p>
         <ul class="rooms">
-          <li><span>Camera</span>camera da letto con biancheria fornita</li>
-          <li><span>Soggiorno</span>spazio living per rilassarsi</li>
+          <li><span>Camera</span>letto matrimoniale, armadio, biancheria fornita</li>
+          <li><span>Soggiorno</span>divano letto matrimoniale</li>
           <li><span>Cucina</span>utensili, frigorifero, macchina da caffè</li>
           <li><span>Bagno</span>doccia, bidet, asciugamani</li>
-          <li><span>Terrazza</span>vista sulla città e sulle montagne</li>
+          <li><span>Terrazza</span>pergolato, divanetti, fioriere</li>
         </ul>
       </div>
       <div class="gallery">
-        <div class="ph ph--a" role="img" aria-label="Soggiorno"><span class="ph__label">Soggiorno</span></div>
-        <div class="ph ph--b" role="img" aria-label="Camera da letto"><span class="ph__label">Camera</span></div>
-        <div class="ph ph--c" role="img" aria-label="Cucina"><span class="ph__label">Cucina</span></div>
-        <div class="ph ph--d" role="img" aria-label="Terrazza"><span class="ph__label">Terrazza</span></div>
+        <button type="button" class="photo gallery__item" data-photo="terrazza"><img src="photos/terrazza-800.webp" srcset="photos/terrazza-800.webp 800w, photos/terrazza-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La terrazza con il pergolato" loading="lazy" decoding="async"></button>
+        <button type="button" class="photo gallery__item" data-photo="soggiorno"><img src="photos/soggiorno-800.webp" srcset="photos/soggiorno-800.webp 800w, photos/soggiorno-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="Il soggiorno" loading="lazy" decoding="async"></button>
+        <button type="button" class="photo gallery__item" data-photo="camera-frontale"><img src="photos/camera-frontale-800.webp" srcset="photos/camera-frontale-800.webp 800w, photos/camera-frontale-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La camera matrimoniale" loading="lazy" decoding="async"></button>
+        <button type="button" class="photo gallery__item" data-photo="cucina"><img src="photos/cucina-800.webp" srcset="photos/cucina-800.webp 800w, photos/cucina-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="La cucina" loading="lazy" decoding="async"></button>
+        <button type="button" class="photo gallery__item" data-photo="bagno-doccia"><img src="photos/bagno-doccia-800.webp" srcset="photos/bagno-doccia-800.webp 800w, photos/bagno-doccia-1600.webp 1600w" sizes="(max-width: 860px) 50vw, 25vw" width="800" height="533" alt="Il bagno" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery__all" data-photo="terrazza">Tutte le foto (<span data-photo-count>35</span>)</button>
       </div>
     </section>
 
@@ -110,9 +110,10 @@
         </ul>
         <p class="muted small">Biciclette a noleggio disponibili in struttura. L'indirizzo esatto e le istruzioni di arrivo vengono inviati con la conferma della prenotazione.</p>
       </div>
-      <div class="map ph ph--map" role="img" aria-label="Mappa della zona">
-        <span class="ph__label">Mappa (Google Maps / OpenStreetMap)</span>
-      </div>
+      <figure class="map">
+        <button type="button" class="photo" data-photo="panorama-viadotto"><img src="photos/panorama-viadotto-800.webp" srcset="photos/panorama-viadotto-800.webp 800w, photos/panorama-viadotto-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="800" height="533" alt="Vista dalle finestre sul viadotto e sulle mura di Siena" loading="lazy" decoding="async"></button>
+        <figcaption><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Girolamo+Gigli+Siena" target="_blank" rel="noopener">Apri la zona su Google Maps ↗</a></figcaption>
+      </figure>
     </section>
 
     <!-- RECENSIONI -->
@@ -189,6 +190,7 @@
             <input type="tel" name="phone" placeholder="Telefono" autocomplete="tel">
           </div>
 
+          <label class="consent"><input type="checkbox" name="terms" required> <span>Ho letto e accetto i <a href="/termini.html" target="_blank">termini e condizioni</a>, compresa la politica di cancellazione, e l'<a href="/privacy.html" target="_blank">informativa privacy</a>.</span></label>
           <button type="submit" class="btn btn--block" id="submit" disabled>Prenota</button>
           <p class="form-msg" id="form-msg" role="status"></p>
           <p class="muted small" id="policy"></p>
@@ -205,13 +207,13 @@
     </div>
     <div>
       <p>Siena, Toscana</p>
-      <p><a href="mailto:info@lafinestrasulverde.it">info@lafinestrasulverde.it</a></p>
+      <p><a href="mailto:oli.giuann@gmail.com">oli.giuann@gmail.com</a></p>
     </div>
     <div>
       <p>Disponibile anche su</p>
       <p><a href="#">Booking.com</a> · <a href="#">Airbnb</a></p>
     </div>
-    <p class="footer__legal muted small">© 2026 La Finestra sul Verde · CIN/CIR: da inserire · <a href="#">Privacy</a> · <a href="#">Termini</a></p>
+    <p class="footer__legal muted small">© 2026 La Finestra sul Verde · CIN: IT052032C2FJMF5O4V · <a href="tel:+393914597040">+39 391 459 7040</a> · <a href="/privacy.html">Privacy</a> · <a href="/termini.html">Termini e condizioni</a></p>
   </footer>
 
   <!-- Logo come simbolo riutilizzabile -->
@@ -230,5 +232,6 @@
 
   <script src="js/config.js"></script>
   <script src="js/booking.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>

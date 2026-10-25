@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   touristTaxPerPersonPerNight: 2.5, // imposta di soggiorno Siena — DA VERIFICARE con il Comune
   touristTaxMaxNights: 7,
   minNights: 2,
-  maxGuests: 4,              // DA CONFERMARE
+  maxGuests: 4,
   onlineDiscountPercent: 5,  // sconto per chi paga online
   // Intervalli occupati: "from" = check-in, "to" = check-out (la notte del check-out resta libera)
   blockedRanges: [
@@ -17,7 +17,7 @@ window.SITE_CONFIG = {
     { from: "2026-12-24", to: "2026-12-28", source: "booking" }
   ],
   contact: {
-    email: "info@lafinestrasulverde.it",
+    email: "oli.giuann@gmail.com",
     phone: "+39 000 000 0000",
     whatsapp: "390000000000"
   }

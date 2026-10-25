@@ -2,14 +2,15 @@
 // Le date occupate in futuro arriveranno in automatico dai calendari iCal di Airbnb e Booking.
 window.SITE_CONFIG = {
   currency: "EUR",
-  nightlyRate: 95,           // prezzo base a notte (dom–gio) — segnaposto
-  weekendRate: 115,          // venerdì e sabato — segnaposto
-  cleaningFee: 35,           // pulizia finale, una tantum
+  nightlyRate: 105,         // prezzo base a notte (dom–gio)
+  weekendRate: 120,          // venerdì e sabato
+  cleaningFee: 0,
+  extraGuestFee: 10,         // a notte, per ogni ospite oltre il secondo
   touristTaxPerPersonPerNight: 2.5, // imposta di soggiorno Siena — DA VERIFICARE con il Comune
   touristTaxMaxNights: 7,
-  minNights: 2,
+  minNights: 1,
   maxGuests: 4,
-  onlineDiscountPercent: 5,  // sconto per chi paga online
+  onlineDiscountPercent: 0,
   // Intervalli occupati: "from" = check-in, "to" = check-out (la notte del check-out resta libera)
   blockedRanges: [
     { from: "2026-11-06", to: "2026-11-09", source: "airbnb" },

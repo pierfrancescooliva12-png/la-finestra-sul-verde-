@@ -288,7 +288,7 @@
 
   // ---------- Impostazioni ----------
   const form = $("settings-form");
-  const NUM = ["basePrice", "minPrice", "maxPrice", "weekendUplift", "cleaningFee", "touristTax", "touristTaxMaxNights", "minNights", "maxGuests", "onlineDiscount", "depositPercent", "freeCancellationDays"];
+  const NUM = ["basePrice", "minPrice", "maxPrice", "weekendUplift", "cleaningFee", "extraGuestFee", "touristTax", "touristTaxMaxNights", "minNights", "maxGuests", "onlineDiscount", "depositPercent", "freeCancellationDays"];
   const STR = ["icalAirbnb", "icalBooking", "ownerEmail", "address", "checkinInstructions", "checkinFrom", "checkinTo", "checkoutBy"];
 
   function fillSettings() {

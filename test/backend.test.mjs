@@ -14,7 +14,8 @@ const { suggestPrice } = await import("../lib/pricing.mjs");
 const { parseIcs, buildIcs } = await import("../lib/ical.mjs");
 const { computeQuote } = await import("../lib/quote.mjs");
 const { verifyWebhook } = await import("../lib/stripe.mjs");
-const { DEFAULT_SETTINGS } = await import("../lib/settings.mjs");
+const { DEFAULT_SETTINGS, publicRules, mergeSettings } = await import("../lib/settings.mjs");
+const { eventsOn } = await import("../lib/events.mjs");
 const { addDays, today } = await import("../lib/dates.mjs");
 
 const call = (method, p, body, headers = {}) =>
@@ -52,8 +53,8 @@ test("parsing e generazione iCal", () => {
 });
 
 test("preventivo con acconto", () => {
-  const q = computeQuote({ prices: [100, 120], guests: 2, payMode: "deposit", rules: { ...DEFAULT_SETTINGS } });
-  assert.equal(q.total, 220 + 35 + 2 * 2 * 2.5);
+  const q = computeQuote({ prices: [100, 120], guests: 2, payMode: "deposit", rules: publicRules(DEFAULT_SETTINGS) });
+  assert.equal(q.total, 220 + 2 * 2 * 2.5);
   assert.equal(q.dueNow, Math.round(q.total * 0.2 * 100) / 100);
   assert.equal(q.balance, Math.round((q.total - q.dueNow) * 100) / 100);
 });
@@ -86,8 +87,8 @@ test("prenotazione demo: conferma, date bloccate, doppia prenotazione rifiutata"
 });
 
 test("validazioni del checkout", async () => {
-  const base = { checkIn: addDays(today(), 60), checkOut: addDays(today(), 61), guests: 2, payMode: "full", name: "X", email: "x@y.it", acceptTerms: true };
-  assert.equal((await call("POST", "/api/checkout", base)).status, 400); // sotto il minimo notti
+  const base = { checkIn: addDays(today(), 60), checkOut: addDays(today(), 60), guests: 2, payMode: "full", name: "X", email: "x@y.it", acceptTerms: true };
+  assert.equal((await call("POST", "/api/checkout", base)).status, 400); // zero notti
   assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), guests: 9 })).status, 400);
   assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), email: "no" })).status, 400);
   assert.equal((await call("POST", "/api/checkout", { ...base, checkOut: addDays(today(), 63), acceptTerms: false })).status, 400);
@@ -164,4 +165,32 @@ test("admin: password con accenti e spazi, variabile mancante", async () => {
   delete process.env.ADMIN_PASSWORD;
   assert.equal((await call("GET", "/api/admin/overview?months=1", null, enc)).status, 503);
   process.env.ADMIN_PASSWORD = "segreta";
+});
+
+test("listino: supplemento oltre il 2° ospite, niente pulizia né sconto, minimo 90 €", () => {
+  const rules = publicRules(DEFAULT_SETTINGS);
+  const two = computeQuote({ prices: [105, 105], guests: 2, payMode: "full", rules });
+  const four = computeQuote({ prices: [105, 105], guests: 4, payMode: "full", rules });
+  assert.equal(two.discount, 0);
+  assert.equal(two.cleaning, 0);
+  assert.equal(four.extra, 2 * 2 * 10);
+  assert.equal(four.stay - two.stay, 40);
+  const jan = suggestPrice("2027-01-12", ctx());
+  assert.equal(jan.price, 90);
+});
+
+test("Strade Bianche nel calendario eventi", () => {
+  assert.ok(eventsOn("2027-03-06").some(e => e.name === "Strade Bianche"));
+  assert.ok(eventsOn("2026-03-06").some(e => e.name === "Strade Bianche"));
+  assert.ok(!eventsOn("2027-03-13").some(e => e.name === "Strade Bianche"));
+});
+
+test("il nuovo listino si applica una volta alle impostazioni già salvate", () => {
+  const old = mergeSettings({ basePrice: 100, minPrice: 70, cleaningFee: 35, onlineDiscount: 5, minNights: 2, ownerEmail: "a@b.it" });
+  assert.equal(old.basePrice, 105);
+  assert.equal(old.minPrice, 90);
+  assert.equal(old.cleaningFee, 0);
+  assert.equal(old.ownerEmail, "a@b.it");
+  const edited = mergeSettings({ ...old, basePrice: 120 });
+  assert.equal(edited.basePrice, 120);
 });

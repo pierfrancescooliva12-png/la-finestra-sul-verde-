@@ -8,8 +8,9 @@
       pickDates: "Seleziona arrivo e partenza sul calendario.",
       pickEnd: "Ora scegli la data di partenza.",
       minNights: n => `Il soggiorno minimo è di ${n} notti.`,
-      nights: n => `${n} notti`, cleaning: "Pulizia finale", tax: "Imposta di soggiorno", discount: "Sconto pagamento online",
-      fullNote: p => `Carta, Apple Pay, Google Pay · sconto ${p}%`,
+      nights: n => `${n} ${n === 1 ? "notte" : "notti"}`, cleaning: "Pulizia finale", tax: "Imposta di soggiorno", discount: "Sconto pagamento online",
+      extra: n => `Supplemento ${n === 1 ? "3° ospite" : "3° e 4° ospite"}`,
+      fullNote: p => `Carta, Apple Pay, Google Pay${p ? ` · sconto ${p}%` : ""}`,
       depositTitle: "Paga all'arrivo",
       depositNote: p => `Acconto del ${p}% ora, saldo al check‑in. La carta resta a garanzia.`,
       dueNow: "Da pagare ora", balance: "Saldo all'arrivo",
@@ -30,8 +31,9 @@
       pickDates: "Select your arrival and departure dates.",
       pickEnd: "Now select your departure date.",
       minNights: n => `Minimum stay is ${n} nights.`,
-      nights: n => `${n} nights`, cleaning: "Final cleaning", tax: "City tax", discount: "Online payment discount",
-      fullNote: p => `Card, Apple Pay, Google Pay · ${p}% off`,
+      nights: n => `${n} ${n === 1 ? "night" : "nights"}`, cleaning: "Final cleaning", tax: "City tax", discount: "Online payment discount",
+      extra: n => `Supplement for ${n === 1 ? "3rd guest" : "3rd and 4th guest"}`,
+      fullNote: p => `Card, Apple Pay, Google Pay${p ? ` · ${p}% off` : ""}`,
       depositTitle: "Pay on arrival",
       depositNote: p => `${p}% deposit now, balance at check‑in. Your card is kept as a guarantee.`,
       dueNow: "Due now", balance: "Balance on arrival",
@@ -75,7 +77,8 @@
     } catch {
       const c = window.SITE_CONFIG;
       state.rules = {
-        minNights: c.minNights, maxGuests: c.maxGuests, cleaningFee: c.cleaningFee, touristTax: c.touristTaxPerPersonPerNight,
+        minNights: c.minNights, maxGuests: c.maxGuests, cleaningFee: c.cleaningFee, extraGuestFee: c.extraGuestFee, includedGuests: 2,
+        touristTax: c.touristTaxPerPersonPerNight,
         touristTaxMaxNights: c.touristTaxMaxNights, onlineDiscount: c.onlineDiscountPercent, depositPercent: 20, freeCancellationDays: 7
       };
       const busy = new Set();
@@ -147,12 +150,14 @@
     const prices = [];
     for (let d = state.start; d < state.end; d = addDays(d, 1)) prices.push(state.nights[d].price);
     const n = prices.length, g = Number(guests.value), payMode = form.pay.value;
-    const stay = prices.reduce((a, b) => a + b, 0);
+    const nightly = prices.reduce((a, b) => a + b, 0);
+    const extra = n * Math.max(0, g - r.includedGuests) * r.extraGuestFee;
+    const stay = nightly + extra;
     const tax = Math.min(n, r.touristTaxMaxNights) * g * r.touristTax;
     const discount = payMode === "full" ? Math.round(stay * r.onlineDiscount) / 100 : 0;
     const total = round2(stay + r.cleaningFee + tax - discount);
     const dueNow = payMode === "full" ? total : round2(total * r.depositPercent / 100);
-    return { n, stay, cleaning: r.cleaningFee, tax: round2(tax), discount, total, dueNow, balance: round2(total - dueNow), payMode, guests: g };
+    return { n, nightly, extra, stay, cleaning: r.cleaningFee, tax: round2(tax), discount, total, dueNow, balance: round2(total - dueNow), payMode, guests: g };
   }
 
   function renderSummary(msg) {
@@ -168,8 +173,9 @@
       return;
     }
     lines.innerHTML = `
-      <div class="line"><span>${T.nights(q.n)}</span><span>${eur.format(q.stay)}</span></div>
-      <div class="line"><span>${T.cleaning}</span><span>${eur.format(q.cleaning)}</span></div>
+      <div class="line"><span>${T.nights(q.n)}</span><span>${eur.format(q.nightly)}</span></div>
+      ${q.extra ? `<div class="line"><span>${T.extra(q.guests - state.rules.includedGuests)}</span><span>${eur.format(q.extra)}</span></div>` : ""}
+      ${q.cleaning ? `<div class="line"><span>${T.cleaning}</span><span>${eur.format(q.cleaning)}</span></div>` : ""}
       <div class="line"><span>${T.tax}</span><span>${eur.format(q.tax)}</span></div>
       ${q.discount ? `<div class="line line--discount"><span>${T.discount}</span><span>−${eur.format(q.discount)}</span></div>` : ""}`;
     $("total").textContent = eur.format(q.total);

@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   touristTaxPerPersonPerNight: 2.5, // imposta di soggiorno Siena — DA VERIFICARE con il Comune
   touristTaxMaxNights: 7,
   minNights: 2,
-  maxGuests: 4,              // DA CONFERMARE
+  maxGuests: 4,
   onlineDiscountPercent: 5,  // sconto per chi paga online
   // Intervalli occupati: "from" = check-in, "to" = check-out (la notte del check-out resta libera)
   blockedRanges: [

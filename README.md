@@ -17,7 +17,7 @@ Prima bozza: sito statico (HTML/CSS/JS, nessuna dipendenza). Per vederlo basta a
 ## Da completare
 
 - [ ] Foto reali (al posto dei riquadri verdi segnaposto)
-- [ ] Prezzi reali, ospiti massimi e politica di cancellazione in `js/config.js`
+- [ ] Prezzi definitivi, ospiti massimi e politica di cancellazione in `js/config.js` (ora sono segnaposto)
 - [ ] Imposta di soggiorno di Siena (importo e notti massime da verificare)
 - [ ] Voto medio e recensioni reali
 - [ ] Contatti, CIN/CIR, privacy e termini

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-label="La Finestra sul Verde">
+  <!-- Finestra ad arco -->
+  <path d="M8 76V32a24 24 0 0 1 48 0v44z"/>
+  <!-- Davanzale -->
+  <path d="M3 76h58"/>
+  <!-- Montante centrale -->
+  <path d="M32 8v20"/>
+  <!-- Ramo con foglie che cresce dal davanzale -->
+  <path d="M32 76V40"/>
+  <path d="M32 58c-9 0-14-6-14-13 8 0 14 5 14 13z"/>
+  <path d="M32 48c8 0 13-5 13-12-7 0-13 4-13 12z"/>
+</svg>

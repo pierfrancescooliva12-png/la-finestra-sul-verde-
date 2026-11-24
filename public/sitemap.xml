@@ -50,4 +50,44 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/privacy.html"/>
   </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/siena-in-due-giorni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/siena-in-due-giorni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/siena-in-two-days.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/en/siena-in-two-days.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/siena-in-due-giorni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/siena-in-two-days.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/chianti-da-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/chianti-da-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/chianti-from-siena.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/en/chianti-from-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/chianti-da-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/chianti-from-siena.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/parcheggio-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/parcheggio-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/parking-in-siena.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/en/parking-in-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/parcheggio-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/parking-in-siena.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/lauree-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/lauree-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/graduation-in-siena.html"/>
+  </url>
+  <url>
+    <loc>https://iridescent-cassata-cd1a68.netlify.app/en/graduation-in-siena.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://iridescent-cassata-cd1a68.netlify.app/lauree-siena.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iridescent-cassata-cd1a68.netlify.app/en/graduation-in-siena.html"/>
+  </url>
 </urlset>
